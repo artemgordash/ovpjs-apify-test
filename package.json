@@ -1,8 +1,13 @@
 {
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
   "main": "./src/main.js",
   "dependencies": {
     "apify": "^3.2.6",
     "crawlee": "^3.12.1",
+    "puppeteer-core": "^23.10.4",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
