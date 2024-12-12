@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "node main.js"
+    "start": "node index.js"
   },
-  "main": "main.js",
+  "main": "index.js",
   "dependencies": {
     "apify": "^3.2.6",
     "crawlee": "^3.12.1",
