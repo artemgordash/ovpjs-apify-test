@@ -35,7 +35,7 @@ await Actor.main(async () => {
       await page.waitForNetworkIdle({ idleTime: 2000 });
       await page.click('#toggleJSON');
       const botDetection = await page.$eval('pre', (pre) => pre.textContent);
-      console.log('🚀 ~ requestHandler ~ botDetection:', botDetection);
+      log('🚀 ~ requestHandler ~ botDetection:', botDetection);
     },
 
     // This function is called if the page processing failed more than maxRequestRetries+1 times.
