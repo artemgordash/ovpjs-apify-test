@@ -2,6 +2,7 @@ import { Actor } from 'apify';
 import { PuppeteerCrawler } from 'crawlee';
 import puppeteerExtra from 'puppeteer-extra';
 import stealthPlugin from 'puppeteer-extra-plugin-stealth';
+import { executablePath } from 'puppeteer';
 
 await Actor.main(async () => {
   // First, we tell puppeteer-extra to use the plugin (or plugins) we want.
@@ -15,6 +16,7 @@ await Actor.main(async () => {
       // !!! You need to specify this option to tell Crawlee to use puppeteer-extra as the launcher !!!
       launcher: puppeteerExtra,
       launchOptions: {
+        executablePath: executablePath(),
         // Other puppeteer options work as usual
         headless: true,
       },
@@ -42,7 +44,9 @@ await Actor.main(async () => {
     },
   });
 
-  await crawler.addRequests(['https://news.ycombinator.com/']);
+  await crawler.addRequests([
+    'https://v0.telemetry.overpoweredjs.com/demo.html',
+  ]);
 
   // Run the crawler and wait for it to finish.
   await crawler.run();
