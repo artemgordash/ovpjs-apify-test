@@ -4,6 +4,8 @@
 # The 16 represents the version of Node.js you want to use.
 FROM apify/actor-node-puppeteer-chrome:18
 
+COPY * ./
+
 # Install NPM packages, skip optional and development dependencies to
 # keep the image small. Avoid logging too much and print the dependency
 # tree for debugging
@@ -27,4 +29,4 @@ RUN npm --quiet set progress=false \
 # in the "scripts.start" section of the package.json file.
 # In short, the instruction looks something like this:
 #
-# CMD npm start
+CMD npm start
