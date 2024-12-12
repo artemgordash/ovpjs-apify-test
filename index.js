@@ -35,7 +35,9 @@ await Actor.main(async () => {
       await page.waitForNetworkIdle({ idleTime: 2000 });
       await page.click('#toggleJSON');
       const botDetection = await page.$eval('pre', (pre) => pre.textContent);
-      await pushData(botDetection);
+      await pushData({
+        data: botDetection,
+      });
       await log(botDetection);
     },
 
